@@ -197,7 +197,8 @@ async function runService(url) {
         await connection.setTransport("/epoxy/index.mjs", [{ wisp: wispUrl }]);
       }
       iframe.src = tab.url;
-      urlInput.value = tab.url.includes('/class/') ? __uv$config.decodeUrl(tab.url.split('/class/')[1]) : __uv$config.decodeUrl(tab.url);
+      let decodedUrl = __uv$config.decodeUrl(tab.url);
+      urlInput.value = decodedUrl.includes('/class/') ? decodedUrl.split('/class/')[1] : __uv$config.decodeUrl(decodedUrl);
     } else {
     if (!/^(https?:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,30}/i.test(tab.url)) {
       tab.url = searchEngine + tab.url;
