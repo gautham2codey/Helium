@@ -162,7 +162,6 @@ function loadUrlFromHistory(url) {
   tabs[currentTab].history.push(url);
   tabs[currentTab].currentHistoryIndex = tabs[currentTab].history.length - 1;
   iframe.src = url;
-  urlInput.value = url;
 }
 
 async function runService(url) {
@@ -197,8 +196,7 @@ async function runService(url) {
         await connection.setTransport("/epoxy/index.mjs", [{ wisp: wispUrl }]);
       }
       iframe.src = tab.url;
-      let decodedUrl = __uv$config.decodeUrl(tab.url);
-      urlInput.value = decodedUrl.includes('/class/') ? decodedUrl.split('/class/')[1] : __uv$config.decodeUrl(decodedUrl);
+      urlInput.value = tab.url.includes('/class/') ? __uv$config.decodeUrl(tab.url.split('/class/')[1]) : __uv$config.decodeUrl(tab.url);
     } else {
     if (!/^(https?:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,30}/i.test(tab.url)) {
       tab.url = searchEngine + tab.url;
@@ -206,8 +204,9 @@ async function runService(url) {
   else if (!/^(https?:\/\/)/i.test(tab.url)) {
       tab.url = "http://" + tab.url;
   }    
+  
   document.getElementById('searchBar').value = tab.url;
-  tabs[currentTab].currentHistoryIndex = tabs[currentTab].history.length - 1;
+tabs[currentTab].currentHistoryIndex = tabs[currentTab].history.length - 1;
     let wispUrl = (location.protocol === "https:" ? "wss" : "ws") + "://" + location.host + "/wisp/";
 	  if (await connection.getTransport() !== "/epoxy/index.mjs") {
 		  await connection.setTransport("/epoxy/index.mjs", [{ wisp: wispUrl }]);
@@ -233,6 +232,19 @@ searchBar.addEventListener("keydown", function (e) {
   
 });
 
+function popout() {
+  if (tabs[currentTab].url.includes("subpages/landing/l.html") || tabs[currentTab].url.includes("subpages/apps/a.html") || tabs[currentTab].url.includes("subpages/settings/s.html")) {
+    notification("You can't pop system pages out.", "#ff9999")
+    return;
+  }
+  var win = window.open("about:blank", "_blank");
+  const frame = document.createElement("iframe");
+  frame.src = document.getElementById("browserIframe").src;
+  win.document.body.appendChild(frame);
+  closeTab(currentTab)
+  frame.style.cssText =
+    "margin: 0; padding: 0; overflow: hidden; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1000000; border: none; border-radius: 0;";
+}
 
 function selectTab(tabIndex) {
   currentTab = tabIndex;
