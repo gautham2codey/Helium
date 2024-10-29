@@ -1,44 +1,36 @@
 {
 	"name": "Helium",
 	"version": "1.0.0",
-	"description": "Highly sophisticated proxy used for evading internet censorship or accessing websites in a controlled sandbox using the power of service-workers and more!",
-	"main": "lib/index.cjs",
-	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/impaxton/Helium"
-	},
-	"files": [
-		"dist",
-		"lib",
-		"uv.d.ts",
-		"client.d.ts"
-	],
+	"description": "Helium instance",
 	"type": "module",
+	"engines": {
+		"npm": ">=7.0.0",
+		"node": ">=16.0.0"
+	},
 	"scripts": {
-		"build": "node build.js",
-		"dev": "node build.js --dev",
-		"prepack": "npm run build",
+		"start": "node src/index.js",
 		"format": "prettier --config .prettierrc.js --write .",
 		"lint": "eslint ./src/",
 		"lint:fix": "eslint ./src/ --fix"
 	},
-	"devDependencies": {
-		"@eslint/eslintrc": "^3.1.0",
-		"@eslint/js": "^9.13.0",
-		"esbuild": "^0.24.0",
-		"eslint": "^9.13.0",
-		"globals": "^15.11.0",
-		"prettier": "^3.3.3",
-		"rimraf": "^6.0.1"
-	},
+	"keywords": [
+		"proxy"
+	],
+	"author": "",
+	"license": "GPL-3.0-or-later",
 	"dependencies": {
+		"@fastify/static": "^8.0.2",
 		"@mercuryworkshop/bare-mux": "^2.1.6",
-		"astring": "^1.9.0",
-		"events": "^3.3.0",
-		"idb": "^8.0.0",
-		"meriyah": "^6.0.2",
-		"parse5": "^7.2.0",
-		"set-cookie-parser": "^2.7.1"
-	}
+		"@mercuryworkshop/epoxy-transport": "^2.1.25",
+		"@titaniumnetwork-dev/ultraviolet": "^3.2.10",
+		"fastify": "^5.0.0",
+		"ultraviolet-static": "github:titaniumnetwork-dev/Ultraviolet-Static",
+		"wisp-server-node": "^1.1.7",
+		"ws": "^8.18.0"
+	},
+	"devDependencies": {
+		"eslint": "^9.13.0",
+		"prettier": "^3.3.3"
+	},
+	"packageManager": "pnpm@9.12.2"
 }
