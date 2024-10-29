@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --background-color: 255,255,255;
+}
+
+#time {
+    font-family: 'Inter', sans-serif;
+    font-size: 100px;
+    font-weight: 700;
+    position: absolute;
+    left: 50%;
+    top: 38%;
+    transform: translate(-50%);
+    color: #fff;
+}
+
+#weather {
+    font-family: 'Inter', sans-serif;
+    font-size: 25px; /* Smaller font for weather */
+    font-weight: 300;
+    position: absolute;
+    left: 50%;
+    top: 38%;
+    transform: translate(-50%);
+    color: #FFF;
+    margin-top: 120px; /* Creates space between time and weather */
+    width: 100%;
+    text-align: center;
+}
+
+.discord {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px; /* Smaller font for weather */
+    font-weight: 300;
+    position: absolute;
+    left: 50%;
+    top: 38%;
+    transform: translate(-50%);
+    color: #FFF;
+    margin-top: 165px; /* Creates space between time and weather */
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    font-style: italic;
+}

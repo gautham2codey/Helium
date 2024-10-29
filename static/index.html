@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Helium</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="assets/icon.png">
+</head>
+<body>
+  <div class="browser">
+    <div class="tab-bar-container">
+      <div class="tab-bar" id="tabBar">
+        <button class="tab active" id="0" onclick="selectTab(0)">
+          <p id="tabText">New Tab</p>
+          <img src="assets/closeTab.svg" id="closeTab" onClick="closeTab()"></img>
+        </button>
+        <button class="add-tab" onclick="addTab()">+</button>
+    
+        <div id="utilities">
+          <img src="assets/back.svg" onclick="navigateBack()">
+          <img src="assets/foward.svg" onclick="navigateFoward()">
+          <img src="assets/reload.svg" onclick="reloadPage()">
+          <img src="assets/bars-solid.svg" onclick="openHamburgerMenu()" id="hamburgermenuicon"></img>
+        </div>
+      </div>
+    </div>
+    <div id="hamburgerbackground">
+      <div id="hamburgermenu" class="hamburger-menu">
+        <button onclick="erudaToggle()">Inspect Element</button>
+        <button onclick="fullscreen()">Fullscreen</button>
+        <button onclick="openSettings()">Settings</button>
+        <button onclick="openApps()">Apps</button>
+        <button onclick="runService('https://discord.gg/gohelium')">Discord</button>
+      </div>
+      <div id="hamburgerbackgroundcontent"></div>
+    </div>
+    <div id="searchbarbackground">
+      <div id="sbBackgroundContent"></div>
+      <input type="text" id="searchBar" placeholder="Search or enter a URL" />
+    </div>
+      <div id="suggestionsBackground">
+        <div id="suggestions" style="display: none;"></div>
+        <div id="sgBackgroundContent"></div>
+    </div>
+    <div id="iframeOverlay">
+      <div id="loadingScreen"><div class="lds-circle"><div></div></div><p id="quote">"Thanks be to God, who gives us the victory through our Lord Jesus Christ!" - 1 Corinthians 15:57</p></div>
+     <iframe id="browserIframe" allowfullscreen src="subpages/landing/l.html"></iframe>
+    </div>
+  </div>
+  <!-- Hover panels -->
+  <script src="script.js"></script>
+  <script src="staff/uv.bundle.js" defer></script>
+  <script src="staff/uv.config.js" defer></script>
+  <script src="baremux/index.js" defer></script>
+  <script src="epoxy/index.js" defer></script>
+</body>
+</html>
