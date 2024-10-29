@@ -118,7 +118,7 @@ function repositionNotifications() {
 }
 
 async function worker() {
-  return await navigator.serviceWorker.register("/sw.js", { scope: "/service" });
+  return await navigator.serviceWorker.register("/sw.js", { scope: "/class" });
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -190,14 +190,14 @@ async function runService(url) {
   } else {
     const connection = new BareMux.BareMuxConnection("/baremux/worker.js");
     const searchEngine = localStorage.getItem('searchEngine') || "https://www.google.com/search?q=";
-    if (/\/service\//.test(tab.url)) {
+    if (/\/class\//.test(tab.url)) {
       tabs[currentTab].currentHistoryIndex = tabs[currentTab].history.length - 1; 
       let wispUrl = (location.protocol === "https:" ? "wss" : "ws") + "://" + location.host + "/wisp/";
       if (await connection.getTransport() !== "/epoxy/index.mjs") {
         await connection.setTransport("/epoxy/index.mjs", [{ wisp: wispUrl }]);
       }
       iframe.src = tab.url;
-      urlInput.value = __uv$config.decodeUrl(tab.url).substring(30);
+      urlInput.value = tab.url.includes('/class/') ? __uv$config.decodeUrl(tab.url.split('/class/')[1]) : __uv$config.decodeUrl(tab.url);
     } else {
     if (!/^(https?:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,30}/i.test(tab.url)) {
       tab.url = searchEngine + tab.url;
