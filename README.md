@@ -11,7 +11,15 @@ The deployable app for Helium, a highly sophisticated proxy used for evading int
 [![Remix on Glitch](https://binbashbanana.github.io/deploy-buttons/buttons/remade/glitch.svg)](https://github.com/titaniumnetwork-dev/Ultraviolet-App/wiki/Remix-on-Glitch)
 [![Deploy to Koyeb](https://binbashbanana.github.io/deploy-buttons/buttons/remade/koyeb.svg)](https://github.com/titaniumnetwork-dev/Ultraviolet-App/wiki/Deploy-to-Koyeb)
 
-If you are deploying to an alternative service or to a server, refer to [Deploy via terminal](https://github.com/titaniumnetwork-dev/Ultraviolet-App/wiki/Deploy-via-terminal).
+If you are deploying to an alternative service or to a server, refer below:
+
+You must have Node LTS & NPM for this to work.
+```
+git clone https://github.com/impaxton/Helium.git/
+cd Helium
+npm i
+npm start
+```
 
 > [!IMPORTANT]  
 > Until deployed on a domain with a valid SSL certificate, Firefox will not be able to load the site. Use chromium for testing on localhost
