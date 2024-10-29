@@ -506,7 +506,7 @@ if (userAgent.match(/chrome|chromium|crios/i)) {
 let quoteText = [
   '"I can do all this through him who gives me strength." - Philippians 4:13',
   '"Depend on the Lord for strength. Always go to him for help." - 1 Chronicles 16:11',
-  '"In the beginning, God created the heavens and the earth." - Genisis 1:1',
+  '"In the beginning, God created the heavens and the earth." - Genesis 1:1',
   '"Jesus Christ is the same yesterday, today and forever." - Hebrews 13:8',
   '"The Lord bless you and keep you." - Numbers 6:24',
 ]
