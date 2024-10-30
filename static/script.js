@@ -11,7 +11,7 @@ window.addEventListener('load', () => {
   if (window.panicKeys && Array.isArray(window.panicKeys) && window.panicUrl) detectPanicKeys();
 });
 
-setTimeout(() => notification("Welcome. Check out the Discord to get more links.", "#039dfc"), 2500);
+setTimeout(() => notification(`Welcome. Check out the "Other Links" button in the menu to get more links.`, "#039dfc"), 2500);
 
 function reloadPage() {
   if (iframe.src != "about:blank") iframe.src = iframe.src;
@@ -517,8 +517,8 @@ if (userAgent.match(/chrome|chromium|crios/i)) {
 
 let quoteText = [
   'Contact me if you have issues at +1 5712956965',
-  'Check out bit.ly/heliumlinks for all of the links.',
-  'Check out Silk at https://bit.ly/ilovesilk',
+  'Check out the "Other links" button in the menu for all of the links.',
+  'Check out Silk at https://bit.ly/ilovesilk/',
 ]
 
 document.getElementById("quote").innerText = quoteText[Math.floor(Math.random() * quoteText.length)];
