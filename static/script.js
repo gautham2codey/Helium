@@ -516,7 +516,6 @@ if (userAgent.match(/chrome|chromium|crios/i)) {
 }
 
 let quoteText = [
-  'Contact me if you have issues at +1 571 295 6965',
   'Check out the "Other links" button in the menu for all of the links.',
   'Check out Silk at https://bit.ly/ilovesilk/',
 ]
