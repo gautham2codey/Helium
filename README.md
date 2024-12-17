@@ -12,6 +12,7 @@ The deployable app for Helium, a highly sophisticated proxy used for evading int
 If you are deploying to an alternative service or to a server, refer below:
 
 You must have Node LTS & NPM for this to work.
+
 ```
 git clone https://github.com/impaxton/Helium.git/
 cd Helium
@@ -23,4 +24,5 @@ npm start
 > Until deployed on a domain with a valid SSL certificate, Firefox will not be able to load the site. Use chromium for testing on localhost
 
 ### HTTP Transport
+
 The example uses [EpoxyTransport](https://github.com/MercuryWorkshop/EpoxyTransport) to fetch proxied data encrypted.
