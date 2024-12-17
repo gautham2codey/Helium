@@ -11,7 +11,7 @@ window.addEventListener('load', () => {
   if (window.panicKeys && Array.isArray(window.panicKeys) && window.panicUrl) detectPanicKeys();
 });
 
-setTimeout(() => notification(`Welcome. Check out the "Other Links" button in the menu to get more links.`, "#039dfc"), 2500);
+setTimeout(() => notification(`Welcome To gautham's GBROWSER, this is a beta version, so expect bugs.`, "#039dfc"), 2500);
 
 function reloadPage() {
   if (iframe.src != "about:blank") iframe.src = iframe.src;
@@ -474,12 +474,12 @@ setTimeout(() => {
 
       doc.head.appendChild(link);
       doc.body.appendChild(iframe);
-      location.replace('https://canvas.com/');
+      location.replace('https://gcs.instructure.com');
 
       const script = doc.createElement('script');
       script.textContent = `
         window.onbeforeunload = function (event) {
-          const confirmationMessage = 'Do you really want to exit Helium?';
+          const confirmationMessage = 'Do you really want to exit GBROWSER?';
           (event || window.event).returnValue = confirmationMessage;
           return confirmationMessage;
         };
@@ -489,12 +489,12 @@ setTimeout(() => {
   }
 }, 200);
 
-if (window.innerWidth <= 600) notification("Some features may not work on mobile. If you find any errors, report them to us on our Discord.", "#db8cff");
+if (window.innerWidth <= 600) notification("Some features may not work on mobile. Not like you'll be on this on your phone anyway. ", "#db8cff");
 
 setTimeout(console.log.bind(console, "%cHelium", "background: #6C3BAA;color:#FFF;padding:5px;border-radius: 5px;line-height: 26px; font-size:25px;"));
 setTimeout(console.log.bind(console, "%cIf you are seeing this, the main script system has loaded.", "background: #6C3BAA;color:#FFF;padding:5px;border-radius: 5px;line-height: 20px; font-size:18px;"));
-setTimeout(console.log.bind(console, "%cIf you encounter an error, contact the development team on our discord. DM the info below.", "background: #6C3BAA;color:#FFF;padding:5px;border-radius: 5px;line-height: 20px; font-size:13px;"));
-setTimeout(console.log.bind(console, "%cDo not share output to anyone but trusted Helium developers with a role in the server! Someone may steal your info.", "background: #6C3BAA;color:#FFF;padding:5px;border-radius: 5px;line-height: 20px; font-size:13px;"));
+setTimeout(console.log.bind(console, "%cIf you encounter an error, lmk and i'll fix it", "background: #6C3BAA;color:#FFF;padding:5px;border-radius: 5px;line-height: 20px; font-size:13px;"));
+setTimeout(console.log.bind(console, "%cDo not share output to anyone but Gautham Someone may steal your info.", "background: #6C3BAA;color:#FFF;padding:5px;border-radius: 5px;line-height: 20px; font-size:13px;"));
 
 const online = navigator.onLine;
 const userAgent = navigator.userAgent;
@@ -516,8 +516,8 @@ if (userAgent.match(/chrome|chromium|crios/i)) {
 }
 
 let quoteText = [
-  'Check out the "Other links" button in the menu for all of the links.',
-  'Check out Silk at https://bit.ly/ilovesilk/',
+  'I know, this takes a bit, my bad cuzzo',
+  'Give me 30 seconds for this to load fr (jk)',
 ]
 
 document.getElementById("quote").innerText = quoteText[Math.floor(Math.random() * quoteText.length)];
