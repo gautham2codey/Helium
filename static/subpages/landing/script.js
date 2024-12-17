@@ -1,9 +1,18 @@
 function updateTime() {
     const timeElement = document.getElementById('time');
     const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
+    let hours = now.getHours();
     const minutes = String(now.getMinutes()).padStart(2, '0');
     const seconds = String(now.getSeconds()).padStart(2, '0');
+
+    // Determine AM or PM
+    const period = hours >= 12 ? 'PM' : 'AM';
+
+    // Convert hours to 12-hour format
+    hours = hours % 12;
+    hours = hours ? hours : 12; // The hour '0' should be 12
+
+    // Display time in 12-hour format
     timeElement.textContent = `${hours}:${minutes}:${seconds}`;
 }
 
