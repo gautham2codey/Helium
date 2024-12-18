@@ -11,7 +11,7 @@ window.addEventListener('load', () => {
   if (window.panicKeys && Array.isArray(window.panicKeys) && window.panicUrl) detectPanicKeys();
 });
 
-setTimeout(() => notification(`Welcome To gautham's GBROWSER, this is a beta version, so expect bugs.`, "#039dfc"), 2500);
+setTimeout(() => notification(`Welcome To gautham's GBROWSER, this is version 1, so expect bugs.`, "#039dfc"), 2500);
 
 function reloadPage() {
   if (iframe.src != "about:blank") iframe.src = iframe.src;
