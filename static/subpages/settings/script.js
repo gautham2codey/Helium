@@ -161,7 +161,7 @@ switch (autoLaunchCookie) {
       parent.document.getElementsByTagName('head')[0].appendChild(link);
       localStorage.removeItem('customFavicon');
       document.getElementById('iconChange').placeholder = "Enter the favicon URL";
-      parent.notification('The favicon URL has been reset.', "#95ff8a");
+      parent.notification('GBROWSER Database says: Favicon URL has been reset.', "#95ff8a");
       return;
     }
     if (!/^(https?:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,30}/i.test(faviconUrl)) {
@@ -190,12 +190,12 @@ switch (autoLaunchCookie) {
       parent.document.title = "Helium";
       localStorage.removeItem('customTitle');
       document.getElementById('iconChange').placeholder = "Enter the favicon URL";
-      parent.notification('The title has been reset.', "#95ff8a");
+      parent.notification('GBROWSER Database says: The title has been reset.', "#95ff8a");
       return;
     }
     parent.document.title = newTitle;
     localStorage.setItem('customTitle', newTitle);
-    parent.notification('The title has been set.', "#95ff8a");
+    parent.notification('GBROWSER Database says: The title has been set.', "#95ff8a");
     if (localStorage.getItem('customTitle') == '') {
       document.getElementById('titleChange').placeholder = "Enter the favicon URL";
     } else {
@@ -220,7 +220,7 @@ switch (autoLaunchCookie) {
           if (!panicReset) {  
             parent.window.panicKeys = savePush;
             localStorage.setItem("panicKeys", JSON.stringify(savePush));
-            parent.notification("Your panic keys have been set.", "#95ff8a"); 
+            parent.notification("GBROWSER Database says: Your panic keys have been set.", "#95ff8a"); 
             parent.detectPanicKeys();
           }
         }, timeLimit);
@@ -231,7 +231,7 @@ switch (autoLaunchCookie) {
         if (escCount >= 5) {
           localStorage.removeItem('panicKeys');
           parent.window.panicKeys = null;
-          parent.notification("Your panic keys have been reset.", "#95ff8a");
+          parent.notification("GBROWSER Database says: Your panic keys have been reset.", "#95ff8a");
           panicReset = true; 
           elem.placeholder = "Enter your panic key(s)";
         }
@@ -250,7 +250,7 @@ switch (autoLaunchCookie) {
  
   function changePanicUrl (url) {
     if (!/^(https?:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,30}/i.test(url)) {
-      parent.notification('Please put a valid URL in the URL box.', "#ff9999");
+      parent.notification('GBROWSER URL BOT says: Please put a valid URL in the URL box.', "#ff9999");
       url = "https://google.com/"
     } else if (!/^(https?:\/\/)/.test(url)) {
       url = "https://" + url;
@@ -258,7 +258,7 @@ switch (autoLaunchCookie) {
     if (url.trim() == "") {
       url = "https://google.com/";
     }
-    parent.notification('Your panic URL has been set.', "#95ff8a");
+    parent.notification('GBROWSER URL BOT says: Your panic URL has been set.', "#95ff8a");
     parent.window.panicURL = url;
     localStorage.setItem("panicURL", url);
     document.getElementById('panicURL').placeholder = url;
@@ -272,7 +272,7 @@ switch (autoLaunchCookie) {
       return;
     }
     if (!/^(https?:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,30}/i.test(imageUrl)) {
-      parent.notification('Please put a valid URL in the URL box.', "#ff9999");
+      parent.notification('GBROWSER URL BOT says: Please put a valid URL in the URL box.', "#ff9999");
       imageUrl = '';
       return;
     } else if (!/^(https?:\/\/)/.test(imageUrl)) {
