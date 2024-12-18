@@ -105,7 +105,7 @@ function onetimeLaunch() {
 
       doc.head.appendChild(link);
       doc.body.appendChild(iframe);
-      location.replace('https://canvas.com/');
+      location.replace('https://gcs.instructure.com');
 
       const script = doc.createElement('script');
       script.textContent = \`

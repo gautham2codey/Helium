@@ -517,7 +517,7 @@ if (userAgent.match(/chrome|chromium|crios/i)) {
 
 let quoteText = [
   'I know, this takes a bit, my bad cuzzo',
-  'Give me 30 seconds for this to load fr (jk)',
+  'MY BAD I KNOW THIS TAKES FOREVER TO LOAD, ILL FIND A FIX ',
 ]
 
 document.getElementById("quote").innerText = quoteText[Math.floor(Math.random() * quoteText.length)];
